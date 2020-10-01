@@ -55,11 +55,11 @@ while :; do
 done
 
 
-echo "appname: $appname"
+echo "appname: \"$appname\""
 echo "createprofile: $createprofile"
-echo "filepath: $filepath"
-echo "scan_name: $scan_name"
-echo "optional args: $opt_args"
+echo "filepath: \"$filepath\""
+echo "scan_name: \"$scan_name\""
+echo "optional args: \"$opt_args\""
 
 #below pulls latest wrapper version. alternative is to pin a version like so:
 #javawrapperversion=20.8.7.1
