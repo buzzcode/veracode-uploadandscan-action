@@ -1,5 +1,14 @@
 #!/bin/sh -l
 
+echo p1 $1
+echo p2 $2
+echo p3 $3
+echo p4 $4
+echo P5 $5
+echo p6 $6
+echo p7 $7
+echo p8 $8
+
 # default to false, so as to not create a new App Profile
 createprofile=false
 
