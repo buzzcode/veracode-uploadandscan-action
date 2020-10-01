@@ -1,30 +1,33 @@
 name: 'Veracode Upload And Scan'
+
 description: 'Upload files to veracode and start a static scan.'
+
 inputs:
-  appname:  # id of input
-    description: 'appname'
-    required: true
+  appname:
+    description: 'Name of the Application in the Veracode platform'
+    required: false
     default: '${{ github.repository }}'
-  createprofile:  # id of input
-    description: 'createprofile'
+  createprofile:
+    description: 'Create a new Application if none exists'
+    required: false
+    default: 'false'
+  filepath:
+    description: 'File to upload'
     required: true
-    default: true
-  filepath:  # id of input
-    description: 'filepath'
-    required: true
-  version:  # id of input
-    description: 'version'
-    required: true
+  scan_name:
+    description: 'Name of the Scan'
+    required: false
     default: 'Scan from Github job: ${{ github.run_id }}'
-  vid:  # id of input
-    description: 'vid'
+  vid:
+    description: 'Veracode Secret ID'
     required: true
-  vkey:  # id of input
-    description: 'vkey'
+  vkey:
+    description: 'Veracode Secret Key'
     required: true
-# outputs:
-#   time: # id of output
-#     description: 'The time we greeted you'
+  opt_args:
+    description: 'Optional arguments for the java API Wrapper'
+    required: false
+
 runs:
   using: 'docker'
   image: 'Dockerfile'
@@ -32,6 +35,7 @@ runs:
     - ${{ inputs.appname }}
     - ${{ inputs.createprofile }}
     - ${{ inputs.filepath }}
-    - ${{ inputs.version }}
+    - ${{ inputs.scan_name }}
     - ${{ inputs.vid }}
     - ${{ inputs.vkey }}
+    - ${{ inputs.opt_args}}
