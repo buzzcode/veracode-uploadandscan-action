@@ -1,22 +1,12 @@
 #!/bin/sh -l
 
-echo p1 $1
-echo p2 $2
-echo p3 $3
-echo p4 $4
-echo P5 $5
-echo p6 $6
-echo p7 $7
-echo p8 $8
-
 # default to false, so as to not create a new App Profile
 createprofile=false
 
 # parse the inputs
+# note that this relies on every param having a value, if if it's the empty string
+# this should be fine due to how this is called (from the action.yml)
 while :; do
-     echo $1
-     echo $2
-     echo checking...
      case $1 in
           -appname) 
                appname=$2
@@ -54,18 +44,28 @@ while :; do
      shift
 done
 
-
 echo "appname: \"$appname\""
 echo "createprofile: $createprofile"
 echo "filepath: \"$filepath\""
 echo "scan_name: \"$scan_name\""
 echo "optional args: \"$opt_args\""
 
+# check for at least something in the filepath 
+if [ -z $filepath ]; then
+     echo "ERROR: filepath is not set.  Please fix this."
+     exit 1
+fi
+
+# check for vid and vkey set
+if [ -z $vid ] || [ -z $vkey ]; then     
+     echo "ERROR: Veracode ID or Key not set.  Please fix this."
+     exit 1
+fi 
+
 #below pulls latest wrapper version. alternative is to pin a version like so:
 #javawrapperversion=20.8.7.1
 
 javawrapperversion=$(curl https://repo1.maven.org/maven2/com/veracode/vosp/api/wrappers/vosp-api-wrappers-java/maven-metadata.xml | grep latest |  cut -d '>' -f 2 | cut -d '<' -f 1)
-
 echo "javawrapperversion: $javawrapperversion"
 
 # curl -sS -o VeracodeJavaAPI.jar "https://repo1.maven.org/maven2/com/veracode/vosp/api/wrappers/vosp-api-wrappers-java/$javawrapperversion/vosp-api-wrappers-java-$javawrapperversion.jar"
@@ -77,4 +77,5 @@ echo "javawrapperversion: $javawrapperversion"
 #      -version "$scan_name" \
 #      -vid "$vid" \
 #      -vkey "$vkey" \
-#      -autoscan true $opt_args
+#      -autoscan true \
+#      $opt_args
