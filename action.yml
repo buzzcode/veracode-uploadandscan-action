@@ -32,10 +32,10 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.appname }}
-    - ${{ inputs.createprofile }}
-    - ${{ inputs.filepath }}
-    - ${{ inputs.scan_name }}
-    - ${{ inputs.vid }}
-    - ${{ inputs.vkey }}
-    - ${{ inputs.opt_args}}
+    - -appname ${{ inputs.appname }}
+    - -createprofile ${{ inputs.createprofile }}
+    - -filepath ${{ inputs.filepath }}
+    - -scan_name ${{ inputs.scan_name }}
+    - -vid ${{ inputs.vid }}
+    - -vkey ${{ inputs.vkey }}
+    - -opt_args ${{ inputs.opt_args}}
