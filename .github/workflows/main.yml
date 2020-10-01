@@ -21,5 +21,5 @@ jobs:
       with:
         appname: 'GitHub Action Testing'
         filepath: 'test_data/hello.jar'
-        vid: '${{ secrets.VERACODE_ID }}'
-        vkey: '${{ secrets.VERACODE_KEY }}'
+        vid: '${{ secrets.VERACODE_API_ID }}'
+        vkey: '${{ secrets.VERACODE_API_KEY }}'
