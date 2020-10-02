@@ -12,7 +12,7 @@ inputs:
     required: false
     default: 'false'
   filepath:
-    description: 'File to upload'
+    description: 'File(s) to upload'
     required: true
   scan_name:
     description: 'Name of the Scan'

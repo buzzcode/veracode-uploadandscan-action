@@ -4,7 +4,7 @@
 createprofile=false
 
 # parse the inputs
-# note that this relies on every param having a value, if if it's the empty string
+# note that this relies on every param having a value, if it's the empty string
 # this should be fine due to how this is called (from the action.yml)
 while :; do
      case $1 in
