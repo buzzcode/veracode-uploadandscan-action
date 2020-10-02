@@ -4,7 +4,7 @@
 createprofile=false
 
 # parse the inputs
-# note that this relies on every param having a value, if it's the empty string
+# note that this relies on every param having a value, even if it's the empty string
 # this should be fine due to how this is called (from the action.yml)
 while :; do
      case $1 in
@@ -44,11 +44,12 @@ while :; do
      shift
 done
 
-echo "appname: \"$appname\""
-echo "createprofile: $createprofile"
-echo "filepath: \"$filepath\""
-echo "scan_name: \"$scan_name\""
-echo "optional args: \"$opt_args\""
+echo "Calling Veracode Upload and Scan with:"
+echo "\tappname: \"$appname\""
+echo "\tcreateprofile: $createprofile"
+echo "\tfilepath: \"$filepath\""
+echo "\tscan_name: \"$scan_name\""
+echo "\toptional args: \"$opt_args\""
 
 # check for at least something in the filepath 
 if [ -z $filepath ]; then
