@@ -45,11 +45,11 @@ while :; do
 done
 
 echo "Calling Veracode Upload and Scan with:"
-echo "\tappname: \"$appname\""
-echo "\tcreateprofile: $createprofile"
-echo "\tfilepath: \"$filepath\""
-echo "\tscan_name: \"$scan_name\""
-echo "\toptional args: \"$opt_args\""
+echo "    appname: \"$appname\""
+echo "    createprofile: $createprofile"
+echo "    filepath: \"$filepath\""
+echo "    scan_name: \"$scan_name\""
+echo "    optional args: \"$opt_args\""
 
 # check for at least something in the filepath 
 if [ -z $filepath ]; then
