@@ -27,6 +27,7 @@ inputs:
   opt_args:
     description: 'Optional arguments for the java API Wrapper'
     required: false
+    default: ''
 
 runs:
   using: 'docker'
