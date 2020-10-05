@@ -83,10 +83,10 @@ echo [Calling]: java -jar VeracodeJavaAPI.jar \
 
 java -jar VeracodeJavaAPI.jar \
      -action UploadAndScan \
-     -appname $appname \
+     -appname "$appname" \
      -createprofile $createprofile \
-     -filepath $filepath \
-     -version $scan_name \
+     -filepath "$filepath" \
+     -version "$scan_name" \
      -vid $vid \
      -vkey $vkey \
      -autoscan true \
