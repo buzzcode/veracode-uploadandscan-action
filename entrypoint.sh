@@ -9,7 +9,7 @@ createprofile=false
 while :; do
      case $1 in
           -appname) 
-               appname="$2"
+               appname=\"$2\"
                shift
                ;;
           -createprofile)
