@@ -75,11 +75,11 @@ ls -l $filepath
 curl -sS -o VeracodeJavaAPI.jar "https://repo1.maven.org/maven2/com/veracode/vosp/api/wrappers/vosp-api-wrappers-java/$javawrapperversion/vosp-api-wrappers-java-$javawrapperversion.jar"
 echo java -jar VeracodeJavaAPI.jar \
      -action UploadAndScan \
-     -appname "$appname" \
+     -appname \"$appname\" \
      -createprofile $createprofile \
-     -filepath "$filepath" \
-     -version "$scan_name" \
-     -vid "$vid" \
-     -vkey "$vkey" \
+     -filepath \"$filepath\" \
+     -version \"$scan_name\" \
+     -vid \"$vid\" \
+     -vkey \"$vkey\" \
      -autoscan true \
      $opt_args
