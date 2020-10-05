@@ -15,12 +15,18 @@ jobs:
     - name: checkout code
       uses: actions/checkout@v2
 
+    - name: upload files to scan
+      uses: actions/upload-artifact@v2
+      with:
+        path: test_data/hello.jar
+
     - name: Veracode Upload and Scan Action Step
       uses: ./ # Uses an action in the root directory
       id: upload_and_scan
       with:
         appname: 'GitHub Action Testing'
-        filepath: '/github/workspace/test_data/hello.jar'
+        #filepath: 'test_data/hello.jar'
+        filepath: 'test_data/hello.jar'
         vid: '${{ secrets.VERACODE_API_ID }}'
         vkey: '${{ secrets.VERACODE_API_KEY }}'
         #opt_args: '-sandboxName "My Sandbox" -createSandbox true -foo="bar"'
