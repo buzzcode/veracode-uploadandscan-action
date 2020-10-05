@@ -20,8 +20,8 @@ jobs:
       id: upload_and_scan
       with:
         appname: 'GitHub Action Testing'
-        filepath: 'test_data\\hello.jar'
-        #filepath: 'test_data/hello.jar'
+        filepath: 'test_data/'
+        #filepath: 'test_data/hello.jar'                    # single file
         vid: '${{ secrets.VERACODE_API_ID }}'
         vkey: '${{ secrets.VERACODE_API_KEY }}'
         #opt_args: '-sandboxName "My Sandbox" -createSandbox true -foo="bar"'
