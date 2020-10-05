@@ -9,7 +9,7 @@ createprofile=false
 while :; do
      case $1 in
           -appname) 
-               appname=$2
+               appname="$2"
                shift
                ;;
           -createprofile)
@@ -19,19 +19,19 @@ while :; do
                shift
                ;;
           -filepath)
-               filepath=$2
+               filepath="$2"
                shift
                ;;
           -scan_name)
-               scan_name=$2
+               scan_name="$2"
                shift
                ;;
           -vid)
-               vid=$2
+               vid="$2"
                shift
                ;;
           -vkey)
-               vkey=$2
+               vkey="$2"
                shift
                ;;
           -opt_args)
@@ -45,11 +45,11 @@ while :; do
 done
 
 echo "Calling Veracode Upload and Scan with:"
-echo "    appname: \"$appname\""
+echo "    appname: $appname"
 echo "    createprofile: $createprofile"
-echo "    filepath: \"$filepath\""
-echo "    scan_name: \"$scan_name\""
-echo "    optional args: \"$opt_args\""
+echo "    filepath: $filepath"
+echo "    scan_name: $scan_name"
+echo "    optional args: $opt_args"
 
 # check for at least something in the filepath 
 if [ -z $filepath ]; then
