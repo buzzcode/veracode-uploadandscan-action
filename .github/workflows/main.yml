@@ -25,4 +25,5 @@ jobs:
         #filepath: 'test_data/'                             # all files in folder
         vid: '${{ secrets.VERACODE_API_ID }}'
         vkey: '${{ secrets.VERACODE_API_KEY }}'
-        opt_args: '-sandboxname My Sandbox -createsandbox true'
+        opt_args: '-sandboxname MySandbox -createsandbox true'
+        #opt_args: '-sandboxname \'My Sandbox\' -createsandbox true'
