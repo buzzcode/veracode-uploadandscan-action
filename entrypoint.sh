@@ -79,7 +79,7 @@ echo [Calling]: java -jar VeracodeJavaAPI.jar \
      -vid $vid \
      -vkey $vkey \
      -autoscan true \
-     "$opt_args"
+     \"$opt_args\"
 
 java -jar VeracodeJavaAPI.jar \
      -action UploadAndScan \
@@ -90,4 +90,4 @@ java -jar VeracodeJavaAPI.jar \
      -vid $vid \
      -vkey $vkey \
      -autoscan true \
-     "$opt_args"
+     \"$opt_args\"
