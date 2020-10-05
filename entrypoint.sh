@@ -80,8 +80,8 @@ echo [Calling]: java -jar VeracodeJavaAPI.jar \
      -createprofile $createprofile \
      -filepath "$filepath" \
      -version \"$scan_name\" \
-     -vid \"$vid\" \
-     -vkey \"$vkey\" \
+     -vid "$vid" \
+     -vkey "$vkey" \
      -autoscan true \
      $opt_args
 
@@ -91,7 +91,7 @@ java -jar VeracodeJavaAPI.jar \
      -createprofile $createprofile \
      -filepath "$filepath" \
      -version \"$scan_name\" \
-     -vid \"$vid\" \
-     -vkey \"$vkey\" \
+     -vid "$vid" \
+     -vkey "$vkey" \
      -autoscan true \
      $opt_args
