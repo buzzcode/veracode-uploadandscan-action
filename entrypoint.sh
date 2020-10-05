@@ -69,6 +69,7 @@ fi
 javawrapperversion=$(curl https://repo1.maven.org/maven2/com/veracode/vosp/api/wrappers/vosp-api-wrappers-java/maven-metadata.xml | grep latest |  cut -d '>' -f 2 | cut -d '<' -f 1)
 echo "javawrapperversion: $javawrapperversion"
 
+pwd
 ls -l
 ls -l $filepath
 
