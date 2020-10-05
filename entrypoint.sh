@@ -78,7 +78,7 @@ echo [Calling]: java -jar VeracodeJavaAPI.jar \
      -action UploadAndScan \
      -appname \"$appname\" \
      -createprofile $createprofile \
-     -filepath \"$filepath\" \
+     -filepath "$filepath" \
      -version \"$scan_name\" \
      -vid \"$vid\" \
      -vkey \"$vkey\" \
@@ -89,7 +89,7 @@ java -jar VeracodeJavaAPI.jar \
      -action UploadAndScan \
      -appname \"$appname\" \
      -createprofile $createprofile \
-     -filepath \"$filepath\" \
+     -filepath "$filepath" \
      -version \"$scan_name\" \
      -vid \"$vid\" \
      -vkey \"$vkey\" \
