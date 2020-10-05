@@ -9,7 +9,7 @@ createprofile=false
 while :; do
      case $1 in
           -appname) 
-               appname=\"$2\"
+               appname=$2
                shift
                ;;
           -createprofile)
@@ -19,19 +19,19 @@ while :; do
                shift
                ;;
           -filepath)
-               filepath=\"$2\"
+               filepath=$2
                shift
                ;;
           -scan_name)
-               scan_name=\"$2\"
+               scan_name=$2
                shift
                ;;
           -vid)
-               vid=\"$2\"
+               vid=$2
                shift
                ;;
           -vkey)
-               vkey=\"$2\"
+               vkey=$2
                shift
                ;;
           -opt_args)
@@ -69,14 +69,17 @@ fi
 javawrapperversion=$(curl https://repo1.maven.org/maven2/com/veracode/vosp/api/wrappers/vosp-api-wrappers-java/maven-metadata.xml | grep latest |  cut -d '>' -f 2 | cut -d '<' -f 1)
 echo "javawrapperversion: $javawrapperversion"
 
+ls -l
+ls -l $filepath
+
 curl -sS -o VeracodeJavaAPI.jar "https://repo1.maven.org/maven2/com/veracode/vosp/api/wrappers/vosp-api-wrappers-java/$javawrapperversion/vosp-api-wrappers-java-$javawrapperversion.jar"
 echo java -jar VeracodeJavaAPI.jar \
      -action UploadAndScan \
-     -appname $appname \
+     -appname "$appname" \
      -createprofile $createprofile \
-     -filepath $filepath \
-     -version $scan_name \
-     -vid $vid \
-     -vkey $vkey \
+     -filepath "$filepath" \
+     -version "$scan_name" \
+     -vid "$vid" \
+     -vkey "$vkey" \
      -autoscan true \
      $opt_args
