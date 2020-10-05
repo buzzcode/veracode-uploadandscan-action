@@ -19,19 +19,19 @@ while :; do
                shift
                ;;
           -filepath)
-               filepath="$2"
+               filepath=\"$2\"
                shift
                ;;
           -scan_name)
-               scan_name="$2"
+               scan_name=\"$2\"
                shift
                ;;
           -vid)
-               vid="$2"
+               vid=\"$2\"
                shift
                ;;
           -vkey)
-               vkey="$2"
+               vkey=\"$2\"
                shift
                ;;
           -opt_args)
