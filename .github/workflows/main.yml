@@ -20,9 +20,8 @@ jobs:
       id: upload_and_scan
       with:
         #appname: 'GitHubTesting'                           # simple app name
-        appname: '''GitHub Action Testing'''                # app name with spaces
-        filepath: 'test_data/hello.jar'
-        #filepath: 'test_data/hello.jar'                    # single file
+        appname: 'GitHub Action Testing'                    # app name with spaces
+        filepath: 'test_data/hello.jar'                     # single file
         #filepath: 'test_data/'                             # all files in folder
         vid: '${{ secrets.VERACODE_API_ID }}'
         vkey: '${{ secrets.VERACODE_API_KEY }}'
