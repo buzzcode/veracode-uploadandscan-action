@@ -23,3 +23,4 @@ jobs:
         filepath: 'test_data/hello.jar'
         vid: '${{ secrets.VERACODE_API_ID }}'
         vkey: '${{ secrets.VERACODE_API_KEY }}'
+        opt_args: '-sandboxName "My Sandbox" -createSandbox true -foo="bar"'
