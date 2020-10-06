@@ -72,14 +72,14 @@ curl -sS -o VeracodeJavaAPI.jar "https://repo1.maven.org/maven2/com/veracode/vos
 
 # build the command we're going to call
 cmd="java -jar VeracodeJavaAPI.jar -action UploadAndScan"
-cmd+=" -appname '"$appname"'"
-cmd+=" -createprofile "$createprofile
-cmd+=" -filepath '"$filepath"'"
-cmd+=" -version '"$scan_name"'"
-cmd+=" -vid "$vid
-cmd+=" -vkey "$vkey
-cmd+=" -autoscan true"
-cmd+=" "$opt_args
+cmd=$cmd" -appname '"$appname"'"
+cmd=$cmd" -createprofile "$createprofile
+cmd=$cmd" -filepath '"$filepath"'"
+cmd=$cmd" -version '"$scan_name"'"
+cmd=$cmd" -vid "$vid
+cmd=$cmd" -vkey "$vkey
+cmd=$cmd" -autoscan true"
+cmd=$cmd" "$opt_args
 
 echo $cmd
 eval $cmd
