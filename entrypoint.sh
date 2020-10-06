@@ -70,24 +70,16 @@ echo "javawrapperversion: $javawrapperversion"
 
 curl -sS -o VeracodeJavaAPI.jar "https://repo1.maven.org/maven2/com/veracode/vosp/api/wrappers/vosp-api-wrappers-java/$javawrapperversion/vosp-api-wrappers-java-$javawrapperversion.jar"
 
-echo [Calling]: java -jar VeracodeJavaAPI.jar \
-     -action UploadAndScan \
-     -appname "$appname" \
-     -createprofile $createprofile \
-     -filepath "$filepath" \
-     -version "$scan_name" \
-     -vid $vid \
-     -vkey $vkey \
-     -autoscan true \
-     \"$opt_args\"
+# build the command we're going to call
+cmd="java -jar VeracodeJavaAPI.jar -action UploadAndScan"
+cmd+=" -appname '"$appname"'"
+cmd+=" -createprofile "$createprofile
+cmd+=" -filepath '"$filepath"'"
+cmd+=" -version '"$scan_name"'"
+cmd+=" -vid "$vid
+cmd+=" -vkey "$vkey
+cmd+=" -autoscan true"
+cmd+=" "$opt_args
 
-java -jar VeracodeJavaAPI.jar \
-     -action UploadAndScan \
-     -appname "$appname" \
-     -createprofile $createprofile \
-     -filepath "$filepath" \
-     -version "$scan_name" \
-     -vid $vid \
-     -vkey $vkey \
-     -autoscan true \
-     \"$opt_args\"
+echo $cmd
+eval $cmd
